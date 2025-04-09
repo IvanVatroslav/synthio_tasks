@@ -20,7 +20,7 @@ services:
     environment:
       - MESSAGE_STORAGE_PATH=/data/messages
     volumes:
-      - ./stored_messages:/data/messages
+      - ./task_docker/stored_messages:/data/messages
     networks:
       - messaging-network
 
