@@ -1,0 +1,11 @@
+# Build and start the containers
+docker-compose up --build
+
+# Send a test message
+curl.exe -X POST -H "Content-Type: application/json" -d '{\"message\": \"Hello Syntio!\"}' http://localhost:8081/messages
+
+# Check local storage for saved messages
+Get-ChildItem -Path .\task_docker\stored_messages
+
+# Stop the containers
+docker-compose down
