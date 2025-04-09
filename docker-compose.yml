@@ -20,7 +20,7 @@ services:
     environment:
       - MESSAGE_STORAGE_PATH=/data/messages
     volumes:
-      - message-storage:/data/messages
+      - ./stored_messages:/data/messages
     networks:
       - messaging-network
 
