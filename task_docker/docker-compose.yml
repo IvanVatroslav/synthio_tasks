@@ -1,7 +1,7 @@
 version: '3'
 services:
   message-processor:
-    build: ./task_docker/message_processor
+    build: message_processor
     container_name: message-processor
     ports:
       - "8081:8081"
@@ -13,14 +13,14 @@ services:
       - message-store
 
   message-store:
-    build: ./task_docker/message_store
+    build: message_store
     container_name: message-store
     ports:
       - "8082:8082"
     environment:
       - MESSAGE_STORAGE_PATH=/data/messages
     volumes:
-      - ./task_docker/stored_messages:/data/messages
+      - ./stored_messages:/data/messages
     networks:
       - messaging-network
 
